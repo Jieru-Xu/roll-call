@@ -265,8 +265,8 @@
             </div>
             <div id="add">
                 <div class="search">
-                    <input type="text" id="memberName" placeholder="輸入新社員名字">
-                    <button onclick="addMember()">新增</button></div>
+                    <input type="text">
+                    <button>新增</button></div>
             </div>
             <div id="month">
                 <div class="search">
@@ -276,29 +276,10 @@
         </section>
         <footer><a href="https://github.com/Jieru-Xu/roll-call/settings/pages"> Jie-ru Xu</a></footer>
     </main>
-    <script src="https://script.google.com/macros/s/AKfycbwdqQMc9M4TUgXxjyY0Y2t8r-bnwRuBWKdqVAwYssj_z3VHfIjRokHyLUebK1lKa453lA/exec"></script>
     <script src="https://apis.google.com/js/api.js"></script>
-    <script>
-        //addA = () => { add.style.opacity = 1, add.style.zIndex = 2 };
-        function addA() {
-            var addElement = document.getElementById("add");
-              if (addElement) {
-                 addElement.style.opacity = 1;
-                 addElement.style.zIndex = 2;
-               }
-         }
-        function addMember() {
-             var memberName = document.getElementById("memberName").value;
-             if (memberName.trim() === "") {
-                 alert("請輸入新社員的名字");
-                 return;
-              }
-             google.script.run.addMember(memberName, function(response) {
-                 alert(response); // 顯示操作結果
-                 // 清空輸入框
-                 document.getElementById("memberName").value = "";
-              }).addMember(memberName);
-        }       
+        var url = "https://script.google.com/macros/s/AKfycbwdqQMc9M4TUgXxjyY0Y2t8r-bnwRuBWKdqVAwYssj_z3VHfIjRokHyLUebK1lKa453lA/exec";
+        const [add] = ["add"].map(t => document.getElementById(t)), 
+		addA = () => { add.style.opacity = 1, add.style.zIndex = 2 }; fetch(`${url}?type=new&name=${encodeURIComponent(t)}`).then(t => status.innerHTML = "新增成功").catch(t => { status.innerHTML = t });      
     </script>
 </body>
 
