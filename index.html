@@ -276,7 +276,8 @@
         </section>
         <footer><a href="https://github.com/Jieru-Xu/roll-call/settings/pages"> Jie-ru Xu</a></footer>
     </main>
-    <script>
+    <script src="https://apis.google.com/js/api.js"></script>
+     <script>
         var url = "https://script.google.com/macros/s/AKfycbwdqQMc9M4TUgXxjyY0Y2t8r-bnwRuBWKdqVAwYssj_z3VHfIjRokHyLUebK1lKa453lA/exec";
         const [add] = ["add"].map(t => document.getElementById(t)), 
 		addA = () => { add.style.opacity = 1, add.style.zIndex = 2 }; fetch(`${url}?type=new&name=${encodeURIComponent(t)}`).then(t => status.innerHTML = "新增成功").catch(t => { status.innerHTML = t });      
