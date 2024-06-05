@@ -240,10 +240,13 @@
         <h1>羽球二社點名系統</h1>
         <h2 id="status">一起打球阿</h2>
         <nav id="user">
-            <button onclick="searchA()">查詢紀錄</button><button onclick="callA()">點名</button><button onclick="ballA()">用球數</button>
+            <button onclick="searchA()">查詢紀錄</button>
+            <button onclick="callA()">點名</button>
+            <button onclick="ballA()">用球數</button>
         </nav>
         <nav id="lulu">
-            <button onclick="monthA()">新增月份</button><button onclick="addA()">新增社員</button>
+            <button onclick="monthA()">新增月份</button>
+            <button onclick="addA()">新增社員</button>
         </nav>
         <section>
             <div id="history">
@@ -280,9 +283,9 @@
     </main>
     <script src="https://apis.google.com/js/api.js">
         var url = "https://script.google.com/macros/s/AKfycbx0636CV2IXymF4uFnTbPhO1YOUMNTcNbxb9EpbjbYm5jL_zq2Z7zOKd183a4HKHo7Phw/exec";
-        function addA() {
+        /*function addA() {
             google.script.run.addA();
-        }
+        }*/
         function addMember() {
             var memberName = document.getElementById("memberName").value;
             google.script.run.withSuccessHandler(function(result){
