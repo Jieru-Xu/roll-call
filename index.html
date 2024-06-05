@@ -280,6 +280,9 @@
     </main>
     <script>
         var url = "https://script.google.com/macros/s/AKfycbzLnfvrOyGtU56x9cbbzPMusbDCzTcyJyHWIy2-BHNa--wap0cKLtmeQmk55a7mTD8r8g/exec";
+        function addA() {
+            google.script.run.addA();
+        }
         function addMember() {
             var memberName = document.getElementById("memberName").value;
             google.script.run.withSuccessHandler(function(result){
@@ -288,6 +291,7 @@
                     google.script.host.close();
                 }
             }).addMember(memberName);
+        }       
     </script>
 </body>
 
